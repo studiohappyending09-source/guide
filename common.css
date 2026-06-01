@@ -1,0 +1,205 @@
+@charset "utf-8";
+:root {
+    /* color */
+    --main-black:#000000;
+    --sub-black: #999999;
+    --key-color: #5A7231;
+
+    /* font-basic */
+    --font-family: 'Montserrat', 'Pretendard', sans-serif;
+    --font-weight: 400;
+
+    --fs-16: 1.6rem;  /* 16px */
+    --fs-17: 1.7rem;
+    --fs-18: 1.8rem;
+    --fs-20: 2rem;
+    --fs-22: 2.2rem;
+    --fs-24: 2.4rem;
+    --fs-26: 2.6rem;
+    --fs-28: 2.8rem;
+    --fs-30: 3rem;
+    --fs-32: 3.2rem;
+    --fs-36: 3.6rem;
+    --fs-42: 4.2rem;
+    --fs-48: 4.8rem;
+    --fs-56: 5.6rem;
+    --fs-62: 6.2rem;
+    --fs-68: 6.8rem;
+    --fs-72: 7.2rem;
+}
+
+.inner { position: relative; width: 96%; margin: 0 auto; max-width: 1720px; }
+
+
+/* reset(기본셋팅 영역) */
+* { margin: 0; padding: 0; font: inherit; color: inherit; }
+*, :after, :before { box-sizing: border-box; }
+
+:root {-webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -o-text-size-adjust: 100%; text-size-adjust: 100%; cursor: default; overflow-wrap: break-word; }
+
+html,body { height: 100%; }
+html { scroll-behavior: smooth; box-sizing: border-box; font-size: 62.5%; scrollbar-gutter: stable; }
+body { margin: 0px auto; line-height: 1; -webkit-font-smoothing: antialiased; min-width: 360px; font-size: 1.6rem; }
+
+a { text-decoration: none; }
+ol, ul { list-style: none; }
+b { font-weight: 800; }
+
+p, li, span, input, a { line-height: 100%; }
+fieldset, iframe { border: 0; }
+select, input, textarea, button { font-size: inherit; vertical-align: middle; border-radius: 0px; }
+select { border-radius: 0; /* 아이폰 사파리 보더 없애기 */ -webkit-appearance: none; /* 화살표 없애기 for chrome*/ -moz-appearance: none; /* 화살표 없애기 for firefox*/ appearance: none /* 화살표 없애기 공통*/ }
+select::-ms-expand{ display: none /* 화살표 없애기 for IE10, 11*/ }
+textarea { width: 100%; resize: none; }
+table {	border-collapse: collapse; border-spacing: 0; table-layout: fixed; }
+button { background-color: transparent; border: 0; cursor: pointer; font: inherit; line-height: inherit; vertical-align: inherit; }
+button:disabled { cursor: default; }
+strong { font-weight: bold; }
+caption, legend, .blind { overflow: hidden; position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; clip: rect(0,0,0,0); white-space: nowrap; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+blockquote, q {	quotes: none; }
+address, em { font-style: normal; }
+pre { white-space: pre-wrap; }
+
+img { width: 100%; vertical-align: top; }
+video { vertical-align: top; }
+
+
+/* S: 컬러 클래스 셋팅 */
+.t-black { color: var(--main-black); }
+.t-key { color: var(--key-color); }
+
+a { color: var(--main-black); }
+/* E: 컬러 클래스 셋팅 */
+
+
+/* S: 커스텀 셋팅 영역 */
+body { font-weight: var(--font-weight); font-family: var(--font-family); color: var(--main-black); word-break: keep-all; }
+body.noneScroll { overflow: hidden; }
+#container { overflow-x: hidden; overflow-y: clip; }
+
+.skew { transform: skew(-0.03deg); display: inline-block; }
+
+.underline { text-decoration: underline; }
+.readonly, input[readonly="readonly"] { background: #f1f1f1 !important; cursor: default; }
+
+.top-btn { display: block; }
+.top-btn.hide { display: none; }
+
+.hidden { display: none; width: 0; height: 0; text-indent: -9999px; overflow: hidden; }
+.clear:after { display: block; content: ""; clear: both; height: 0; }
+/* E: 커스텀 셋팅 영역 */
+
+
+/* S: flicking */
+.touch { margin-bottom: 10px; display: none; }
+.touch img { margin-right: 15px; animation: moveIco 1s ease-in-out 0s infinite alternate forwards; }
+.touch.active { display: block; }
+.f_wrapper { width: 100%; }
+.f_wrapper .f_wrapper_inner { overflow:auto; -webkit-overflow-scrolling: touch; overflow-y: hidden; }
+.f_scroller { display: block; width: 100%; height: 100%; padding: 0; }
+
+@-webkit-keyframes moveIco {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(8px); }  
+}
+@keyframes moveIco {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(8px); }  
+}
+@media screen and (max-width:768px){
+    .touch { display: block; }
+}
+/* E: flicking */
+
+
+/* S: 웹접근성 탭키 */
+.accessibility01 { width: 100%; padding: 24px 0;  background-color: #cc2634; color: #fff; text-align: center; font: 600 18px/100% sans-serif; position: fixed; top: 0; left: -50000px; z-index: 999; }
+.accessibility01:focus { left: 0; }
+/* E: 웹접근성 탭키 */
+
+
+/* S: 카카오맵 기본 설정 */
+.root_daum_roughmap { width: 100%; }
+.root_daum_roughmap .wrap_map { height: 100%; }
+.root_daum_roughmap_landing { width: 100% !important; }
+.root_daum_roughmap_landing .border2 { display: block !important; }
+.root_daum_roughmap .wrap_controllers { display: none; }
+/* E: 카카오맵 기본 설정 */
+
+
+@media screen and (max-width:768px){
+    .inner { width: 100%; padding: 0 24px; }
+}
+
+
+@media screen and (max-width:1700px){
+  html { font-size: 55%; }
+}
+
+@media (max-width: 1400px) {
+  :root {
+    --fs-16: 1.4rem;
+    --fs-17: 1.5rem;
+    --fs-18: 1.6rem;
+    --fs-20: 1.8rem;
+    --fs-22: 2rem;
+    --fs-24: 2.2rem;
+    --fs-26: 2.4rem;
+    --fs-28: 2.6rem;
+    --fs-32: 3rem;
+    --fs-36: 3.2rem;
+    --fs-42: 3.8rem;
+    --fs-48: 4.5rem;
+    --fs-56: 5rem;
+    --fs-62: 5.2rem;
+    --fs-68: 6rem;
+    --fs-72: 6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --fs-16: 1.4rem;
+    --fs-17: 1.5rem;
+    --fs-18: 1.5rem;
+    --fs-20: 1.7rem;
+    --fs-22: 1.9rem;
+    --fs-24: 2rem;
+    --fs-26: 2.4rem;
+    --fs-28: 2.4rem;
+    --fs-30: 2.4rem;
+    --fs-32: 3rem;
+    --fs-36: 2.8rem;
+    --fs-42: 3rem;
+    --fs-48: 3.2rem;
+    --fs-56: 3.6rem;
+    --fs-62: 4rem;
+    --fs-68: 4.5rem;
+    --fs-72: 4.5rem;
+  }
+  html { font-size: 50%; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-16: 14px;
+    --fs-17: 14px;
+    --fs-18: 14px;
+    --fs-20: 15px;
+    --fs-22: 16px;
+    --fs-24: 18px;
+    --fs-26: 20px;
+    --fs-28: 20px;
+    --fs-30: 20px;
+    --fs-32: 22px;
+    --fs-36: 24px;
+    --fs-42: 28px;
+    --fs-48: 30px;
+    --fs-56: 31px;
+    --fs-62: 32px;
+    --fs-68: 36px;
+    --fs-72: 36px;
+  }
+}
