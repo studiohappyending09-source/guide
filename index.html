@@ -29,30 +29,6 @@
     .mouse-capture { width: 230px; position: absolute; z-index: 1; visibility: hidden; pointer-events: none; }
     .mouse-capture.view { visibility: visible; }
   </style>
-  <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const items = document.querySelectorAll(".grid-3-row li");
-          const capture = document.querySelector(".mouse-capture");
-          const captureImg = capture.querySelector("img");
-
-          items.forEach((item, index) => {
-            item.addEventListener("mouseenter", () => {
-              const imgIndex = index + 1;
-              captureImg.src = `./img/capture_${imgIndex}.jpg`;
-              capture.classList.add('view');
-            });
-
-            item.addEventListener("mousemove", (e) => {
-              capture.style.left = e.pageX + 20 + "px"; // 마우스 오른쪽에 띄우기
-              capture.style.top = e.pageY + 20 + "px";
-            });
-
-            item.addEventListener("mouseleave", () => {
-              capture.classList.remove('view');
-            });
-          });
-        });
-  </script>
 </head>
 <body>
   <div class="container">
@@ -64,10 +40,8 @@
         <li><a href="https://calendar.google.com/calendar/u/0/r" target="_blank"><img src="./img/ico_4.png" alt="아이콘"><span>캘린더</span></a></li>
         <li><a href="https://drive.google.com/drive/folders/1wlVhv7S63OYD4mPYq97bBy09CKbe2c4i" target="_blank"><img src="./img/ico_5.png" alt="아이콘"><span>드라이브</span></a></li>
         <li><a href="https://docs.google.com/document/u/0/" target="_blank"><img src="./img/ico_9.png" alt="아이콘"><span>엑셀 - 업무일정</span></a></li>
-        <li><a href="https://docs.google.com/document/u/0/" target="_blank"><img src="./img/ico_8.png" alt="아이콘"><span>엑셀 - </span></a></li>
-        <li><a href="https://docs.google.com/document/u/0/" target="_blank"><img src="./img/ico_7.png" alt="아이콘"><span>엑셀 - </span></a></li>
-        <li><a href="https://www.figma.com/files/team/1576515913048253834/project/507347119?fuid=1576515911166076609" target="_blank"><img src="./img/ico_7.png" alt="아이콘"><span>피그마</span></a></li>
-        <li><a href="https://muvel.app/cloud" target="_blank"><img src="./img/ico_7.png" alt="아이콘"><span>뮤블</span></a></li>
+        <li><a href="https://www.figma.com/files/team/1576515913048253834/project/507347119?fuid=1576515911166076609" target="_blank"><img src="./img/ico_1.png" alt="아이콘"><span>피그마</span></a></li>
+        <li><a href="https://muvel.app/cloud" target="_blank"><img src="./img/ico_2.png" alt="아이콘"><span>뮤블</span></a></li>
       </ul>
     </div>
     <div class="cont">
